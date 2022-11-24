@@ -8,12 +8,13 @@ payload = json.dumps({
     "dataSource": "Sandbox",
     "pipeline": [
         {
-          "$group": {
-            "_id": "$brand",
-            "count": { "$sum": 1 },
+          "$lookup": {
+            "from": "tiendas",
+            "localField": "tiendaID",
+            "foreignField": "tiendaID",
+            "as": "Belongs to the shop: "
           }
-        },
-        { "$sort": { "count": 1 } }
+        }
       ]
 })
 headers = {
@@ -29,5 +30,5 @@ hola = response.text
 diccionario = json.loads(hola)
 consulta = diccionario['documents']
 for item in consulta:
-    print (item)
+    print (str(item) + '\n')
     contador = contador + 1
