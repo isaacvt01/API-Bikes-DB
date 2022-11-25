@@ -14,12 +14,39 @@ Now that we have followed the link in the previous step, we must create the API,
 
 The first step is to name the API Key.
 
-![API configuration page](images/03NombrarAPIKey.PNG)
+![API name field](images/03NombrarAPIKey.PNG)
 
-Once the name is set, we must select the cluster, the database and the collection that we want to use in the API Key. We must also specify the programming language in which we want to get the data API, in our case Python.
+### Choose database and collection
 
-![API configuration page](images/04GenerarAPIKey.PNG)
+Once the name is set, we must ***select the cluster, the database and the collection that we want to use*** in the API Key. 
 
-Now we simply copy and paste the data given to us. We have pasted them in the VSCode:
+### Change cURL to Python
 
-![API configuration page](images/05PegarCodigoEnVSCode.PNG)
+We must also ***specify the programming language*** in which we want to get the data API, in our case ***Python***.
+
+![Generate API Key](images/04GenerarAPIKey.PNG)
+
+## Paste the cURL on VS Code
+
+Now we simply copy and paste the data given to us. We have pasted them in the VS Code:
+
+![Code pasted on VS Code](images/05PegarCodigoEnVSCode.PNG)
+
+## Modify the code
+
+En esta sección explicaremos lo que hemos hecho con la cURL proporciada. Hemos hecho varios ejemplos:
+
+- Show all the bikes
+- Delete one bike
+- Use the aggregate pipeline ***$group***
+- Insert one bike
+- Use the aggregate pipeline ***$lookup***
+- Find with $regex
+- Update a document
+
+### Show all the bikes
+
+![Code changed for finding all the bikes](images/06CodigoArregladoFindAll.PNG)
+
+
+
