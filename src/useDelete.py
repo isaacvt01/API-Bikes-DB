@@ -17,8 +17,8 @@ def DataBeforeDelete():
     'api-key': 'qR8ioaiwVwnYxVUg75DzUT92yGkhQcSqbWr2xGO6dwVekV2hhbin8iP44XC0JQFW'
   }
 
-  paramethers = {'clave1': 'valor1', 'clave2': 'valor2'}
-  response = requests.request("POST", url, headers=headers, data=payload, params= paramethers)
+  parameters = {'clave1': 'valor1', 'clave2': 'valor2'}
+  response = requests.request("POST", url, headers=headers, data=payload, params= parameters)
   responseToText = response.text
   dict = json.loads(responseToText)
   consultationBefore = dict['document']
@@ -42,8 +42,8 @@ def deleteOne():
           'api-key': 'qR8ioaiwVwnYxVUg75DzUT92yGkhQcSqbWr2xGO6dwVekV2hhbin8iP44XC0JQFW'
           }
 
-  paramethers = {'clave1': 'valor1', 'clave2': 'valor2'}
-  response = requests.request("POST", url, headers=headers, data=payload, params= paramethers)
+  parameters = {'clave1': 'valor1', 'clave2': 'valor2'}
+  response = requests.request("POST", url, headers=headers, data=payload, params= parameters)
 
 def DataAfter():
 
@@ -61,18 +61,14 @@ def DataAfter():
     'api-key': 'qR8ioaiwVwnYxVUg75DzUT92yGkhQcSqbWr2xGO6dwVekV2hhbin8iP44XC0JQFW'
   }
 
-  paramethers = {'clave1': 'valor1', 'clave2': 'valor2'}
-  response = requests.request("POST", url, headers=headers, data=payload, params= paramethers)
-  hola = response.text
-  dict = json.loads(hola)
+  parameters = {'clave1': 'valor1', 'clave2': 'valor2'}
+  response = requests.request("POST", url, headers=headers, data=payload, params= parameters)
+  responseToText = response.text
+  dict = json.loads(responseToText)
   consultationAfter = dict['document']
   return consultationAfter
 
-# def checkDelete(consultaAntes, consultaDespues):
-#   if consultaAntes == consultaDespues:
-#     print ('No se ha podido borrar')
-#   else:
-#     print('Borrado correctamente')
+
   
 
 
@@ -83,8 +79,8 @@ deleteOne()
 ActualData  = DataAfter()
 
 if  dataBefore == ActualData:
-  print ('No se ha podido borrar')
+  print ('Could not be deleted')
 else:
-  print('Borrado correctamente')
+  print('Correctly deleted')
 
 

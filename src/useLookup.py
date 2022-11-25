@@ -23,12 +23,12 @@ headers = {
   'api-key': 'qR8ioaiwVwnYxVUg75DzUT92yGkhQcSqbWr2xGO6dwVekV2hhbin8iP44XC0JQFW'
 }
 
-parametros = {'clave1': 'valor1', 'clave2': 'valor2'}
-response = requests.request("POST", url, headers=headers, data=payload, params= parametros)
-contador = 0
-hola = response.text
-diccionario = json.loads(hola)
-consulta = diccionario['documents']
-for item in consulta:
+parameters = {'clave1': 'valor1', 'clave2': 'valor2'}
+response = requests.request("POST", url, headers=headers, data=payload, params= parameters)
+cont = 0
+responseToText = response.text
+dict = json.loads(responseToText)
+consultation = dict['documents']
+for item in consultation:
     print (str(item) + '\n')
-    contador = contador + 1
+    cont = cont + 1
