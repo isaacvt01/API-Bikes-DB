@@ -68,12 +68,6 @@ def DataAfter():
   consultationAfter = dict['document']
   return consultationAfter
 
-
-  
-
-
-
-
 dataBefore = DataBeforeDelete()
 deleteOne()
 ActualData  = DataAfter()
